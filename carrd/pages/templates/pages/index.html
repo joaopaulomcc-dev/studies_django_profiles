@@ -3,5 +3,28 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-<h1>Carrd</h1>
+    <h1>Carrd</h1>
+
+    {% if user.is_authenticated %}
+
+        <p>{{ user.username }}</p>
+
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token%}
+            <button type="submit">Log Out</button>
+        </form>
+
+    {% else %}
+
+        <form action="{% url 'login' %}" method="get">
+            {% csrf_token%}
+            <button type="submit">Log In</button>
+        </form>
+
+        <form action="{% url 'accounts:signup' %}" method="get">
+            {% csrf_token%}
+            <button type="submit">Sign Up</button>
+        </form>
+
+    {% endif %}
 {% endblock content %}
