@@ -9,6 +9,8 @@
 
         <p>{{ user.username }}</p>
 
+        <a href="{% url 'password_change' %}">Change your password</a>
+
         <form action="{% url 'logout' %}" method="post">
             {% csrf_token%}
             <button type="submit">Log Out</button>
