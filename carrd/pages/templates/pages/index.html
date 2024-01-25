@@ -28,7 +28,12 @@
             <button type="submit">Sign Up</button>
         </form>
 
-        <a href="{% url 'password_reset' %}">Forgot your password?</a>
 
     {% endif %}
+
+    {% for profile in profiles %}
+        <h2><a href="{% url 'pages:profile' profile.user.username %}">{{ profile.user.first_name }}</a></h2>
+        <p>{{ profile.text|truncatechars:140 }}</p>
+    {% endfor %}
+
 {% endblock content %}

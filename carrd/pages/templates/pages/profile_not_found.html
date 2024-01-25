@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Profile Not Found{% endblock title %}
+
+{% block content %}
+    <h1>Profile not found...</h1>
+    <p>No profiles for the username {{ username }} where found on our database.</p>
+    <p><a href="{% url 'pages:home' %}">Back to home</a></p>
+
+{% endblock content %}

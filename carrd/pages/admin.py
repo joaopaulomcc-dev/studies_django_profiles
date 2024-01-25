@@ -1,3 +1,9 @@
 from django.contrib import admin
+from pages.models import Profile
 
-# Register your models here.
+
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ["user", "text"]
+
+
+admin.site.register(Profile, ProfileAdmin)

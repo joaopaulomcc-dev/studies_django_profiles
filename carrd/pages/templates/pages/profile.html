@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}{{ profile_owner_full_name }}{% endblock title %}
+
+{% block content %}
+    <h1>{{ profile_owner_full_name}} </h1>
+
+    {% for paragraph in paragraphs %}
+        <p>{{ paragraph }}</p>
+    {% endfor %}
+
+{% endblock content %}
